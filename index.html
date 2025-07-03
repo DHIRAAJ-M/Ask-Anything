@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ask Anything</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 60px;
+    }
+    h1 { color: #333; }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      margin-left: 8px;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>ASK ANYTHING</h1>
+
+  <form method="POST">
+    <input type="text" name="query" placeholder="Type your question..." required />
+    <input type="submit" value="Submit" />
+  </form>
+
+  {% if user_input %}
+  <div class="output">
+    <strong>You asked:</strong> {{ user_input }}
+  </div>
+  {% endif %}
+</body>
+</html>
